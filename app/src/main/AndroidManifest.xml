@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="algo3.gabo.quecomemos" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".RecetaListActivity"
+            android:name=".recetasapp.RecetaListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -19,14 +21,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RecetaDetailActivity"
+            android:name=".recetasapp.RecetaDetailActivity"
             android:label="@string/title_receta_detail"
-            android:parentActivityName=".RecetaListActivity"
+            android:parentActivityName=".recetasapp.RecetaListActivity"
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".RecetaListActivity" />
+                android:value=".recetasapp.RecetaListActivity" />
         </activity>
+
     </application>
 
 </manifest>

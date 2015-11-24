@@ -1,13 +1,17 @@
-package algo3.gabo.quecomemos;
+package algo3.gabo.quecomemos.recetasapp;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import algo3.gabo.quecomemos.dummy.DummyContent;
+import algo3.gabo.quecomemos.recetas.RepoRecetas;
+import algo3.gabo.quecomemos.recetas.adapter.RecetaAdapter;
+import algo3.gabo.quecomemos.recetas.service.RecetasService;
+import retrofit.GsonConverterFactory;
+import retrofit.Retrofit;
+
 
 /**
  * A list fragment representing a list of Recetas. This fragment
@@ -36,6 +40,8 @@ public class RecetaListFragment extends ListFragment {
      * The current activated item position. Only used on tablets.
      */
     private int mActivatedPosition = ListView.INVALID_POSITION;
+
+    private RecetasService recetaService;
 
     /**
      * A callback interface that all activities containing this fragment must
@@ -69,13 +75,10 @@ public class RecetaListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
+        setListAdapter(new RecetaAdapter(
                 getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                DummyContent.ITEMS));
+                //aca tengo que traer la lista de recetas desde el service.
+                RepoRecetas.getInstance().getRecetas(null, 10)));
     }
 
     @Override
@@ -115,7 +118,7 @@ public class RecetaListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(""+id);
     }
 
     @Override
