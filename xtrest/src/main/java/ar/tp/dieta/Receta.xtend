@@ -10,7 +10,7 @@ import org.eclipse.xtend.lib.annotations.Accessors
 @Accessors
 class Receta extends ElementoDeReceta implements Cloneable{
 
-
+	public long id
 	public String sId
 	public int calorias
 	ArrayList<ElementoDeReceta> elementosDeReceta = new ArrayList<ElementoDeReceta> //Integra ingredientes, condimentos y subrecetas.	

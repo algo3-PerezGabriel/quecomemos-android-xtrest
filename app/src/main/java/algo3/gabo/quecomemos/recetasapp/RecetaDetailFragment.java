@@ -7,10 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import algo3.gabo.quecomemos.R;
-import algo3.gabo.quecomemos.recetas.RepoRecetas;
+import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.dominio.Receta;
 
 /**
@@ -58,10 +59,20 @@ public class RecetaDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_receta_detail, container, false);
-
+        CheckBox check;
         // Show the dummy content as text in a TextView.
         if (receta != null) {
-            ((TextView) rootView.findViewById(R.id.receta_detail)).setText("error wachin");
+
+            ((TextView) rootView.findViewById(R.id.receta_autor)).setText("Receta creada por: " + receta.getAutor());
+            ((TextView) rootView.findViewById(R.id.receta_calorias)).setText(String.valueOf(receta.getCalorias()) + " calorias");
+
+            ((TextView) rootView.findViewById(R.id.receta_dificultad)).setText("Dificultad: " + receta.getDificultad());
+            ((TextView) rootView.findViewById(R.id.receta_preparacion)).setText("Pasos de Preparacion: " + receta.getPreparacion());
+            ((TextView) rootView.findViewById(R.id.receta_temporada)).setText("Temporada Recomendada: " + receta.getTemporada());
+
+            check = (CheckBox) rootView.findViewById(R.id.receta_esFavorita);
+            check.setChecked(receta.isFavorita());
+            check.setEnabled(false);
         }
 
         return rootView;

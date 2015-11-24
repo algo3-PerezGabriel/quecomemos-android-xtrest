@@ -49,6 +49,11 @@ class RecetaBuilder {
 		return this
 	}
 	
+	public def RecetaBuilder siendoFavorita(boolean vOf){
+		receta.esFavorita = vOf
+		return this
+	}
+	
 	public def Receta build() {
 		return receta
 	}

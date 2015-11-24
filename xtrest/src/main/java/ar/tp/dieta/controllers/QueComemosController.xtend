@@ -17,12 +17,12 @@ class QueComemosController {
 	RecetarioPublico recetario = new RepoRecetas().getRecetarioPublico
 	
 	def static void main(String[] args) {
-		XTRest.start(QueComemosController, 9011)
+		XTRest.start(QueComemosController, 9000)
 	}
 	
 	@Get("/recetasToGrill")
 	def Result recetasGrilla(){
-		ok(recetario.getRecetas.toJson)
+		ok(recetario.getRecetasAndroid().toJson)
 	}
 
 }

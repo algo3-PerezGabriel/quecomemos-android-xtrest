@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
+import ar.tp.dieta.auxiliares.RecetaJsonAndroid
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Accessors
@@ -12,10 +13,13 @@ class RecetarioPublico implements Cloneable{
 	public List<Receta> recetas = new ArrayList<Receta>()
 	
 	int contador = 0
+	long contadorL = 0
 	
 	def void agregarReceta(Receta unaReceta) {
 		//agrega recetas al recetario
 		contador ++
+		contadorL ++ 
+		unaReceta.id = contadorL
 		unaReceta.sId = Integer.toString(contador)
 		recetas.add(unaReceta)
 	}
@@ -46,4 +50,9 @@ class RecetarioPublico implements Cloneable{
 		recetas.findFirst[getSId.equals(idReceta)]
 	}
 	
+	def List<RecetaJsonAndroid> getRecetasAndroid(){
+		val List<RecetaJsonAndroid> recetasAEnviar = new ArrayList<RecetaJsonAndroid>
+		this.getRecetas().forEach[ receta | recetasAEnviar.add(new RecetaJsonAndroid(receta))]
+		return recetasAEnviar
+	}
 }

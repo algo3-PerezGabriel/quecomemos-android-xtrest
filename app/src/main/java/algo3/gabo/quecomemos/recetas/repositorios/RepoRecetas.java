@@ -1,4 +1,4 @@
-package algo3.gabo.quecomemos.recetas;
+package algo3.gabo.quecomemos.recetas.repositorios;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -6,11 +6,9 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
 
-import algo3.gabo.quecomemos.recetas.RepoRecetas;
+import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.adapter.RecetaAdapter;
 import algo3.gabo.quecomemos.recetas.service.RecetasService;
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
 
 
 /**
