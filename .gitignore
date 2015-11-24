@@ -1,0 +1,11 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/xtrest/target/
+/xtrest/src/main/generated-sources/
+/xtrest/.settings/
+/xtrest/*.project
