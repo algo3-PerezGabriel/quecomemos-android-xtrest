@@ -31,6 +31,7 @@ public class RecetaAdapter extends ArrayAdapter<Receta>{
         LayoutInflater inflater = (LayoutInflater) getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.receta_row, parent, false);
+
         final Receta receta = getItem(position);
 
         TextView tvRecetaNombre = (TextView) rowView.findViewById(R.id.lblNombre);

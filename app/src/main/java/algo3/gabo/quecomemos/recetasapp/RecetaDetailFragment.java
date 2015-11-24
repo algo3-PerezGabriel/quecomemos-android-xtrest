@@ -44,8 +44,14 @@ public class RecetaDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
+
             String idReceta = getArguments().getString(ARG_ITEM_ID);
             receta = RepoRecetas.getInstance().getReceta(new Long(idReceta).longValue());
+
+//          CUANDO ANDE EL REST DEBIERA ANDAR ACÁ
+
+//          receta = (Receta) getArguments().get(ARG_ITEM_ID);
+
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
@@ -70,9 +76,12 @@ public class RecetaDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.receta_preparacion)).setText("Pasos de Preparacion: " + receta.getPreparacion());
             ((TextView) rootView.findViewById(R.id.receta_temporada)).setText("Temporada Recomendada: " + receta.getTemporada());
 
+
+            //el checkbox no tiene comportamiento
+
             check = (CheckBox) rootView.findViewById(R.id.receta_esFavorita);
+            check.setEnabled(true);
             check.setChecked(receta.isFavorita());
-            check.setEnabled(false);
         }
 
         return rootView;

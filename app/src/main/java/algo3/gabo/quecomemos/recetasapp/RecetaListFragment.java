@@ -3,12 +3,21 @@ package algo3.gabo.quecomemos.recetasapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
+import java.util.List;
+
+import algo3.gabo.quecomemos.recetas.dominio.Receta;
 import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.adapter.RecetaAdapter;
 import algo3.gabo.quecomemos.recetas.service.RecetasService;
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 
 /**
@@ -68,15 +77,48 @@ public class RecetaListFragment extends ListFragment {
      * fragment (e.g. upon screen orientation changes).
      */
     public RecetaListFragment() {
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setListAdapter(new RecetaAdapter(
                 getActivity(),
-                //aca tengo que traer la lista de recetas desde el service.
-                RepoRecetas.getInstance().getRecetas(null, 10)));
+                RepoRecetas.getInstance().getRecetas(null,10)));
+
+        /*
+
+        String BASE_URL = "http://localhost:8080/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        recetaService = retrofit.create(RecetasService.class);
+
+        Call<List<Receta>> recetasCall = recetaService.getRecetas();
+
+        recetasCall.enqueue(new Callback<List<Receta>>() {
+            @Override
+            public void onResponse(Response<List<Receta>> response, Retrofit retrofit) {
+                List<Receta> recetasList = response.body();
+
+                setListAdapter(new RecetaAdapter(
+                        getActivity(),
+                        recetasList));
+            }
+            @Override
+            public void onFailure(Throwable t) {
+                t.printStackTrace();
+                Log.e("RecetasApp", t.getMessage());
+            }
+        });
+
+        */
     }
 
     @Override
@@ -116,7 +158,7 @@ public class RecetaListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(""+id);
+        mCallbacks.onItemSelected("" + id);
     }
 
     @Override

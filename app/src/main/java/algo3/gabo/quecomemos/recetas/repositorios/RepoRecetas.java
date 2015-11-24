@@ -28,6 +28,7 @@ public class RepoRecetas {
     }
 
     public void init(){
+
         RepoRecetas.getInstance().addReceta(new Receta("Cazuela", "Dificil", "Invierno", 300, "Gabo", "hervir mucho mucho", true));
         RepoRecetas.getInstance().addReceta(new Receta("Ensalada", "Facil", "Primavera", 213, "Luna", "cocinar batir etc", false));
         RepoRecetas.getInstance().addReceta(new Receta("Pollito", "Media", "Verano", 3452, "Luna", "cortar, mezclar, batir", true));
@@ -51,6 +52,7 @@ public class RepoRecetas {
         return null;
     }
 
+    /*
     public List<String> getNombresRecetas(){
         List<String> nombres = new ArrayList<>();
         for(Receta receta : this.getRecetas(null,10)){
@@ -58,7 +60,7 @@ public class RepoRecetas {
         }
         return nombres;
     }
-
+*/
     public List<Receta> getRecetas(String nombre,int max){
         Iterator<Receta> it = recetas.iterator();
         List<Receta> result = new ArrayList<>();

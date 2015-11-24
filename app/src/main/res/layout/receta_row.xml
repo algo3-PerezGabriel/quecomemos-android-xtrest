@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light">
 
     <TextView
         android:id="@+id/lblNombre"
@@ -17,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="@+id/label"
         android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium">
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
     </TextView>
 
     <TextView
@@ -26,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="@+id/label"
         android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium">
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
     </TextView>
 
     <TextView
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="@+id/label"
         android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium">
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
     </TextView>
 
     <TextView
@@ -44,7 +46,7 @@
         android:layout_height="wrap_content"
         android:text="@+id/label"
         android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium">
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
     </TextView>
 
 </LinearLayout>

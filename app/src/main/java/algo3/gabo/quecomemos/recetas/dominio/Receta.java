@@ -78,7 +78,7 @@ public class Receta implements Serializable {
         return favorita;
     }
 
-    public void setFavorita(boolean favorita) {
-        this.favorita = favorita;
+    public void setFavorita() {
+        this.favorita = true;
     }
 }

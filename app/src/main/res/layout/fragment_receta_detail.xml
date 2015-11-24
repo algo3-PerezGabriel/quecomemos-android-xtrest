@@ -4,15 +4,37 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/receta_autor"
-        style="?android:attr/textAppearanceLarge"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:textIsSelectable="true"
-        tools:context=".PeliculaDetailFragment" />
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/receta_autor"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".PeliculaDetailFragment" />
+
+        <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/receta_esFavorita"
+            android:text="Favorita"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".RecetaDetailFragment" />
+
+    </LinearLayout>
+
+
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -53,17 +75,5 @@
         android:padding="16dp"
         android:textIsSelectable="true"
         tools:context=".PeliculaDetailFragment" />
-
-
-    <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/receta_esFavorita"
-        android:text="Favorita"
-        style="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:textIsSelectable="true"
-        tools:context=".RecetaDetailFragment" />
 
 </LinearLayout>

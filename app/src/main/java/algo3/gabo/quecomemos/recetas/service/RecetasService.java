@@ -1,5 +1,7 @@
 package algo3.gabo.quecomemos.recetas.service;
 
+import java.util.List;
+
 import algo3.gabo.quecomemos.recetas.dominio.Receta;
 
 
@@ -11,6 +13,8 @@ import retrofit.http.GET;
  * Created by Gabo on 24/11/2015.
  */
 public interface RecetasService {
-    @GET("/recetasToGrill")
-    Call<Receta> getRecetas();
+    @GET("listaDeRecetas")
+    Call<List<Receta>> getRecetas();
+
+
 }
