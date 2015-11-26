@@ -13,23 +13,6 @@
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large">
     </TextView>
 
-    <TextView
-        android:id="@+id/lblCalorias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
-    </TextView>
-
-    <TextView
-        android:id="@+id/lblDificultad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
-    </TextView>
 
     <TextView
         android:id="@+id/lblTemporada"
@@ -39,14 +22,32 @@
         android:textSize="40px"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
     </TextView>
+<!--
+       <TextView
+           android:id="@+id/lblCalorias"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@+id/label"
+           android:textSize="40px"
+           android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
+       </TextView>
 
-    <TextView
-        android:id="@+id/lblPreparacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="40px"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
-    </TextView>
+       <TextView
+           android:id="@+id/lblDificultad"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@+id/label"
+           android:textSize="40px"
+           android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
+       </TextView>
 
+       <TextView
+           android:id="@+id/lblPreparacion"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@+id/label"
+           android:textSize="40px"
+           android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse">
+       </TextView>
+   -->
 </LinearLayout>

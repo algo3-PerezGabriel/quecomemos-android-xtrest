@@ -1,6 +1,7 @@
 package algo3.gabo.quecomemos.recetasapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import algo3.gabo.quecomemos.R;
 import algo3.gabo.quecomemos.recetas.dominio.Receta;
 import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.adapter.RecetaAdapter;
@@ -84,14 +86,13 @@ public class RecetaListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+/*
         setListAdapter(new RecetaAdapter(
                 getActivity(),
                 RepoRecetas.getInstance().getRecetas(null,10)));
 
-        /*
-
-        String BASE_URL = "http://localhost:8080/";
+*/
+         final String BASE_URL = "http://192.168.247.112:8080/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -118,7 +119,6 @@ public class RecetaListFragment extends ListFragment {
             }
         });
 
-        */
     }
 
     @Override
@@ -158,7 +158,12 @@ public class RecetaListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected("" + id);
+        // mCallbacks.onItemSelected("" + id);
+        // for the selected item ID.
+        Intent detailIntent = new Intent(this.getActivity(), RecetaDetailActivity.class);
+        detailIntent.putExtra(RecetaDetailFragment.ARG_ITEM_ID, (Receta) listView.getSelectedItem());
+        startActivity(detailIntent);
+
     }
 
     @Override

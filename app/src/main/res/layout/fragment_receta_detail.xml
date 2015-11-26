@@ -4,76 +4,92 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1"
-        android:background="@android:color/holo_orange_light">
+        android:layout_height="wrap_content">
 
-        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/receta_autor"
-            style="?android:attr/textAppearanceLarge"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp"
-            android:textIsSelectable="true"
-            tools:context=".PeliculaDetailFragment" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="169dp"
+            android:layout_height="429dp"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:background="@android:color/holo_orange_light">
 
-        <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/receta_esFavorita"
-            android:text="Favorita"
-            style="?android:attr/textAppearanceMedium"
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/receta_autor"
+                style="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="154dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                tools:context=".PeliculaDetailFragment"
+                android:layout_weight="0.30" />
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/receta_dificultad"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                tools:context=".PeliculaDetailFragment"
+                android:layout_weight="0.53" />
+
+            <CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/receta_esFavorita"
+                android:text="Favorita"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                tools:context=".RecetaDetailFragment" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp"
-            android:textIsSelectable="true"
-            tools:context=".RecetaDetailFragment" />
+            android:layout_height="442dp">
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/receta_calorias"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="153dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                tools:context=".PeliculaDetailFragment" />
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/receta_temporada"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:padding="16dp"
+                android:textIsSelectable="true"
+                tools:context=".PeliculaDetailFragment" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-
-
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/receta_calorias"
-        style="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:textIsSelectable="true"
-        tools:context=".PeliculaDetailFragment" />
-
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/receta_dificultad"
-        style="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:textIsSelectable="true"
-        tools:context=".PeliculaDetailFragment" />
-
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/receta_temporada"
-        style="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:textIsSelectable="true"
-        tools:context=".PeliculaDetailFragment" />
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/receta_preparacion"
         style="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
+        android:layout_width="369dp"
         android:layout_height="match_parent"
         android:padding="16dp"
         android:textIsSelectable="true"
-        tools:context=".PeliculaDetailFragment" />
+        tools:context=".PeliculaDetailFragment"
+        android:layout_gravity="bottom" />
 
 </LinearLayout>

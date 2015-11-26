@@ -1,6 +1,8 @@
 package algo3.gabo.quecomemos.recetas.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Gabo on 24/11/2015.
@@ -15,6 +17,10 @@ public class Receta implements Serializable {
     private int calorias;
     private String autor;
     private boolean favorita;
+
+    List<String> ingredientes = new ArrayList<>();
+    List<String> condimentos = new ArrayList<>();
+    List<String> condiciones = new ArrayList<>();
 
     public Receta(String nombre, String dificultad, String temporada, int calorias, String autor, String preparacion, boolean favorita) {
         this.nombre = nombre;
@@ -80,5 +86,25 @@ public class Receta implements Serializable {
 
     public void setFavorita() {
         this.favorita = true;
+    }
+
+    public String getCondimentos(){
+        return listaToArray(this.condimentos);
+    }
+
+    public String getIngredientes(){
+        return listaToArray(this.ingredientes);
+    }
+
+    public String getCondiciones(){
+        return listaToArray(this.condiciones);
+    }
+
+    public String listaToArray(List<String> lista) {
+        String aDevolver = "";
+        for (String palabra : lista) {
+            aDevolver = palabra + ", " + aDevolver;
+        }
+        return aDevolver;
     }
 }

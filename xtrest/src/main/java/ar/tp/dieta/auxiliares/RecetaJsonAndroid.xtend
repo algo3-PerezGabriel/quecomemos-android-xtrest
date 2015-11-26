@@ -1,7 +1,9 @@
 package ar.tp.dieta.auxiliares
 
-import org.eclipse.xtend.lib.annotations.Accessors
 import ar.tp.dieta.Receta
+import java.util.ArrayList
+import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 class RecetaJsonAndroid {
@@ -13,6 +15,12 @@ class RecetaJsonAndroid {
 	int calorias
 	String autor
 	boolean favorita
+	
+	List<String> condimentos = new ArrayList<String>
+    List<String> ingredientes = new ArrayList<String>
+    List<String> condiciones = new ArrayList<String>
+    
+    
     
 	public new (Receta unaReceta){
     	this.id = unaReceta.id
@@ -23,6 +31,10 @@ class RecetaJsonAndroid {
     	this.calorias = unaReceta.calorias
     	this.autor = unaReceta.nombreOwner
     	this.favorita = unaReceta.esFavorita
+    	this.condimentos = unaReceta.getCondimentos()
+    	this.ingredientes = unaReceta.getIngredientes()
+    	this.condiciones = unaReceta.getCondiciones()
+    	
     }
     
     new (long id, String nombre, String dificultad, String temporada, 

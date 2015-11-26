@@ -79,10 +79,7 @@ public class RecetaListActivity extends AppCompatActivity
 
         } else {
             // In single-pane mode, simply start the detail activity
-            // for the selected item ID.
-            Intent detailIntent = new Intent(this, RecetaDetailActivity.class);
-            detailIntent.putExtra(RecetaDetailFragment.ARG_ITEM_ID, id);
-            startActivity(detailIntent);
+
         }
     }
 }

@@ -45,16 +45,13 @@ public class RecetaDetailFragment extends Fragment {
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
 
-            String idReceta = getArguments().getString(ARG_ITEM_ID);
-            receta = RepoRecetas.getInstance().getReceta(new Long(idReceta).longValue());
-
-//          CUANDO ANDE EL REST DEBIERA ANDAR ACÁ
-
-//          receta = (Receta) getArguments().get(ARG_ITEM_ID);
+            receta = (Receta) getArguments().get(ARG_ITEM_ID);
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
+                appBarLayout.setTitle(receta.getNombre());
+            }else {
                 appBarLayout.setTitle(receta.getNombre());
             }
         }
@@ -69,11 +66,11 @@ public class RecetaDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (receta != null) {
 
-            ((TextView) rootView.findViewById(R.id.receta_autor)).setText("Receta creada por: " + receta.getAutor());
+            ((TextView) rootView.findViewById(R.id.receta_autor)).setText("Creador: " + receta.getAutor());
             ((TextView) rootView.findViewById(R.id.receta_calorias)).setText(String.valueOf(receta.getCalorias()) + " calorias");
 
             ((TextView) rootView.findViewById(R.id.receta_dificultad)).setText("Dificultad: " + receta.getDificultad());
-            ((TextView) rootView.findViewById(R.id.receta_preparacion)).setText("Pasos de Preparacion: " + receta.getPreparacion());
+            ((TextView) rootView.findViewById(R.id.receta_preparacion)).setText("Preparacion: " + receta.getPreparacion());
             ((TextView) rootView.findViewById(R.id.receta_temporada)).setText("Temporada Recomendada: " + receta.getTemporada());
 
 
