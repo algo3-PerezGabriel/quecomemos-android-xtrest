@@ -1,19 +1,20 @@
 package algo3.gabo.quecomemos.recetasapp;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import algo3.gabo.quecomemos.R;
-import algo3.gabo.quecomemos.recetas.dominio.Receta;
-import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.adapter.RecetaAdapter;
+import algo3.gabo.quecomemos.recetas.dominio.Receta;
 import algo3.gabo.quecomemos.recetas.service.RecetasService;
 import retrofit.Call;
 import retrofit.Callback;
@@ -58,10 +59,7 @@ public class RecetaListFragment extends ListFragment {
      * selections.
      */
     public interface Callbacks {
-        /**
-         * Callback for when an item has been selected.
-         */
-        public void onItemSelected(String id);
+        void onItemSelected(Receta receta);
     }
 
     /**
@@ -70,7 +68,7 @@ public class RecetaListFragment extends ListFragment {
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(Receta receta) {
         }
     };
 
@@ -122,6 +120,11 @@ public class RecetaListFragment extends ListFragment {
     }
 
     @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -158,11 +161,11 @@ public class RecetaListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        // mCallbacks.onItemSelected("" + id);
-        // for the selected item ID.
-        Intent detailIntent = new Intent(this.getActivity(), RecetaDetailActivity.class);
-        detailIntent.putExtra(RecetaDetailFragment.ARG_ITEM_ID, (Receta) listView.getSelectedItem());
-        startActivity(detailIntent);
+
+       Receta receta = (Receta) listView.getAdapter().getItem(position);
+        Toast.makeText(getContext(), receta.getNombre(), Toast.LENGTH_LONG).show();
+
+         mCallbacks.onItemSelected(receta);
 
     }
 
@@ -185,6 +188,11 @@ public class RecetaListFragment extends ListFragment {
         getListView().setChoiceMode(activateOnItemClick
                 ? ListView.CHOICE_MODE_SINGLE
                 : ListView.CHOICE_MODE_NONE);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.receta_list_fragment, null, false);
     }
 
     private void setActivatedPosition(int position) {

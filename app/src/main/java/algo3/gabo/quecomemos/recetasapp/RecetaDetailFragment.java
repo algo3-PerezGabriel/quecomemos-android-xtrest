@@ -11,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import algo3.gabo.quecomemos.R;
-import algo3.gabo.quecomemos.recetas.repositorios.RepoRecetas;
 import algo3.gabo.quecomemos.recetas.dominio.Receta;
 
 /**
@@ -44,7 +43,9 @@ public class RecetaDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-
+            // Load the dummy content specified by the fragment
+            // arguments. In a real-world scenario, use a Loader
+            // to load content from a content provider.
             receta = (Receta) getArguments().get(ARG_ITEM_ID);
 
             Activity activity = this.getActivity();

@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import algo3.gabo.quecomemos.R;
+import algo3.gabo.quecomemos.recetas.dominio.Receta;
 
 
 /**
@@ -32,7 +34,6 @@ public class RecetaListActivity extends AppCompatActivity
      * device.
      */
     private boolean mTwoPane;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,13 +65,13 @@ public class RecetaListActivity extends AppCompatActivity
      * indicating that the item with the given ID was selected.
      */
     @Override
-    public void onItemSelected(String id) {
+    public void onItemSelected(Receta receta) {
         if (mTwoPane) {
             // In two-pane mode, show the detail view in this activity by
             // adding or replacing the detail fragment using a
             // fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(RecetaDetailFragment.ARG_ITEM_ID, id);
+            arguments.putSerializable(RecetaDetailFragment.ARG_ITEM_ID, receta);
             RecetaDetailFragment fragment = new RecetaDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -79,7 +80,11 @@ public class RecetaListActivity extends AppCompatActivity
 
         } else {
             // In single-pane mode, simply start the detail activity
-
+            // for the selected item ID.
+            Intent detailIntent = new Intent(this, RecetaDetailActivity.class);
+            Log.w("Recetas", receta.getNombre());
+            detailIntent.putExtra(RecetaDetailFragment.ARG_ITEM_ID, receta);
+            startActivity(detailIntent);
         }
     }
 }
