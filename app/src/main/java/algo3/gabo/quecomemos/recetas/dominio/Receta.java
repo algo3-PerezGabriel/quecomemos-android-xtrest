@@ -103,7 +103,7 @@ public class Receta implements Serializable {
     public String listaToArray(List<String> lista) {
         String aDevolver = "";
         for (String palabra : lista) {
-            aDevolver = palabra + ", " + aDevolver;
+            aDevolver = palabra + "\n" + aDevolver;
         }
         return aDevolver;
     }

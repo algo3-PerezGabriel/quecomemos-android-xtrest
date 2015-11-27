@@ -7,6 +7,8 @@ import algo3.gabo.quecomemos.recetas.dominio.Receta;
 
 import retrofit.Call;
 import retrofit.http.GET;
+import retrofit.http.POST;
+import retrofit.http.PUT;
 
 
 /**
@@ -15,6 +17,5 @@ import retrofit.http.GET;
 public interface RecetasService {
     @GET("listaDeRecetas")
     Call<List<Receta>> getRecetas();
-
 
 }

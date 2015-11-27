@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import algo3.gabo.quecomemos.R;
@@ -67,12 +68,15 @@ public class RecetaDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (receta != null) {
 
-            ((TextView) rootView.findViewById(R.id.receta_autor)).setText("Creador: " + receta.getAutor());
-            ((TextView) rootView.findViewById(R.id.receta_calorias)).setText(String.valueOf(receta.getCalorias()) + " calorias");
+            ((TextView) rootView.findViewById(R.id.receta_autor)).setText("Creado por: " + receta.getAutor());
+            ((TextView) rootView.findViewById(R.id.receta_calorias)).setText(String.valueOf(receta.getCalorias()) + " calorias.");
 
             ((TextView) rootView.findViewById(R.id.receta_dificultad)).setText("Dificultad: " + receta.getDificultad());
             ((TextView) rootView.findViewById(R.id.receta_preparacion)).setText("Preparacion: " + receta.getPreparacion());
-            ((TextView) rootView.findViewById(R.id.receta_temporada)).setText("Temporada Recomendada: " + receta.getTemporada());
+            ((TextView) rootView.findViewById(R.id.receta_temporada)).setText("Temporada: " + receta.getTemporada());
+            ((TextView) rootView.findViewById(R.id.receta_ingredientes)).setText("Ingredientes: " + receta.getIngredientes());
+            ((TextView) rootView.findViewById(R.id.receta_condimentos)).setText("Condimentos: " + receta.getCondimentos());
+            ((TextView) rootView.findViewById(R.id.receta_condiciones)).setText("Condiciones Preexistentes: " + receta.getCondiciones());
 
 
             //el checkbox no tiene comportamiento

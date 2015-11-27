@@ -29,7 +29,7 @@ class QueComemosController {
 	def Result pathRoot(){
 		ok('{ "status" : "OK" }')
 	}
-
+	
 }
 
 

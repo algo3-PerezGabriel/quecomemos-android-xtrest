@@ -35,20 +35,15 @@ public class RecetaAdapter extends ArrayAdapter<Receta>{
         final Receta receta = getItem(position);
 
         TextView tvRecetaNombre = (TextView) rowView.findViewById(R.id.lblNombre);
-        tvRecetaNombre.setText(receta.getNombre());
+            tvRecetaNombre.setText(receta.getNombre());
 
         TextView tvTemporada = (TextView) rowView.findViewById(R.id.lblTemporada);
-        tvTemporada.setText("Temporada: "+receta.getTemporada());
+            tvTemporada.setText("Temporada: "+receta.getTemporada());
+        TextView tvCalorias = (TextView) rowView.findViewById(R.id.lblCalorias);
+            tvCalorias.setText("Calorias: "+ String.valueOf(receta.getCalorias()));
 
-
-//        TextView tvCalorias = (TextView) rowView.findViewById(R.id.lblCalorias);
-//       tvCalorias.setText("Calorias: "+ String.valueOf(receta.getCalorias()));
-
-//        TextView tvDificultad = (TextView) rowView.findViewById(R.id.lblDificultad);
-//        tvDificultad.setText("Dificultad: "+receta.getDificultad());
-
-//        TextView tvPreparacion = (TextView) rowView.findViewById(R.id.lblPreparacion);
-//        tvPreparacion.setText("Preparacion: "+receta.getPreparacion());
+        TextView tvDificultad = (TextView) rowView.findViewById(R.id.lblDificultad);
+            tvDificultad.setText("Dificultad: "+receta.getDificultad());
 
         return rowView;
     }
